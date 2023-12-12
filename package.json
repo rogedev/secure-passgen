@@ -1,6 +1,6 @@
 {
   "name": "secure-passgen",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "secure password generator",
   "main": "app.js",
   "repository": {
