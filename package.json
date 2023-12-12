@@ -1,0 +1,19 @@
+{
+  "name": "secure-passgen",
+  "version": "1.0.0",
+  "description": "secure password generator",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rogedev/secure-passgen.git"
+  },
+  "bin": {
+    "secure-passgen": "./app.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "rogedev",
+  "license": "ISC"
+}
