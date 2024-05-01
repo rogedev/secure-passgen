@@ -1,6 +1,7 @@
 # secure passgen
 
 A simple command-line tool that allows you to generate random and secure passwords.
+this app is used as an example about how to publish packages in npm.
 
 ## Installation
 
