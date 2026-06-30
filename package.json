@@ -1,6 +1,6 @@
 {
   "name": "secure-passgen",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "secure password generator (CLI + library)",
   "main": "./index.cjs",
   "module": "./index.mjs",
