@@ -16,16 +16,29 @@ npm install -g secure-passgen
 
 ## Usage
 
+Run it interactively (press Enter to use the default length of 16):
+
 ```console
 npx secure-passgen
+```
+
+Or pass the length directly with the `--length` flag (alias `-l`):
+
+```console
+npx secure-passgen --length 20
 ```
 
 ## example
 
 ```console
-npx secure-passgen
-Enter the length of the password: 50
+npx secure-passgen --length 50
 Generated Password: s_RU0w2aPx*SzAs3Q%5EbFLL0XyGb%UkoixBL^g5XlBjkSesEv
+```
+
+```console
+npx secure-passgen
+Enter the length of the password (default 16):
+Generated Password: (pw0XFiS3nHjzI(r
 ```
 
 ### implementation
