@@ -1,8 +1,17 @@
 {
   "name": "secure-passgen",
-  "version": "1.0.2",
-  "description": "secure password generator",
-  "main": "app.js",
+  "version": "1.1.0",
+  "description": "secure password generator (CLI + library)",
+  "main": "./index.cjs",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "require": "./index.cjs"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/rogedev/secure-passgen.git"
@@ -10,13 +19,24 @@
   "bin": {
     "secure-passgen": "./app.js"
   },
+  "files": [
+    "index.cjs",
+    "index.mjs",
+    "index.d.ts",
+    "app.js",
+    "libs",
+    "README.md"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test"
   },
   "keywords": [
     "cli",
     "cli-tool",
     "javascript",
+    "typescript",
+    "esm",
+    "library",
     "password",
     "password-generator",
     "security"

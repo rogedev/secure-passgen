@@ -1,7 +1,8 @@
 # secure passgen
 
-A simple command-line tool that allows you to generate random and secure passwords.
-this app is used as an example about how to publish packages in npm.
+A simple tool to generate random and secure passwords. Use it from the
+command line or import it as a library in your own JavaScript/TypeScript app.
+This app is used as an example about how to publish packages in npm.
 
 ## Installation
 
@@ -41,24 +42,43 @@ Enter the length of the password (default 16):
 Generated Password: (pw0XFiS3nHjzI(r
 ```
 
-### implementation
+## Use as a library
+
+Install it as a dependency:
+
+```console
+npm install secure-passgen
+```
+
+The package ships both ESM and CommonJS builds plus TypeScript types, so you
+can `import` or `require` it.
+
+### ESM / TypeScript
 
 ```js
-const crypto = require("crypto")
+import newPassword, { generatePassword } from "secure-passgen"
 
-function generateSecurePassword(n) {
-  const CHARACTERS =
-    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+"
-
-  const randomBytes = crypto.randomBytes(n)
-  const pass = new Array(n)
-
-  for (let i = 0; i < n; i++) {
-    pass[i] = CHARACTERS[randomBytes[i] % CHARACTERS.length]
-  }
-
-  return pass.join("")
-}
-
-module.exports = { generateSecurePassword }
+const password = newPassword()       // 16 characters by default
+const longer = generatePassword(32)  // pass a custom length
 ```
+
+### CommonJS
+
+```js
+const newPassword = require("secure-passgen")
+
+const password = newPassword()
+const longer = newPassword(32)
+```
+
+### API
+
+`generatePassword(length?: number): string`
+
+- `length` — number of characters (default `16`). Must be a positive integer;
+  otherwise a `TypeError` (non-integer) or `RangeError` (less than 1) is thrown.
+- The default export is the same function, so `import newPassword from "secure-passgen"`
+  and `import { generatePassword } from "secure-passgen"` are interchangeable.
+
+Characters are drawn uniformly from `a-z A-Z 0-9 !@#$%^&*()-_=+` using
+`crypto.randomInt`, which uses rejection sampling to avoid modulo bias.

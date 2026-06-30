@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const readline = require("readline")
-const { generateSecurePassword } = require("./libs/generateSecurePassword")
+const generateSecurePassword = require("./index.cjs")
 
 const DEFAULT_LENGTH = 16
 
